@@ -1,0 +1,135 @@
+.testimonials {
+  display: flex;
+  gap: 2rem;
+  padding: 4rem;
+  padding: 0 2rem;
+  height: 500px; /* set a fixed height */
+  overflow: hidden; /* hide the overflow of the testimonials */
+}
+
+.left-t{
+  display: flex;
+  flex:1 1;
+  gap:2 rem;
+  flex-direction: column;
+  text-transform:uppercase;
+  color: white;
+}
+
+.left-t>:nth-child(1){
+  color:var(--orange);
+  font-weight: bold;
+}
+
+.left-t>:nth-child(2),
+.left-t>:nth-child(3),
+.left-t>:nth-child(4) {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.testimonial-name {
+  color: var(--orange);
+}
+
+.left-t>:nth-child(5){
+  text-transform: none;
+  text-align: justify;
+  letter-spacing: 2px;
+  line-height: 40px;
+}
+
+.right-t {
+  flex: 1;
+  position: relative;
+}
+
+.right-t > img {
+  position: absolute;
+  width: 17rem;
+  height: 20rem;
+  object-fit: cover;
+  right: 8rem;
+  top: 2rem;
+  bottom: 0; 
+}
+
+.right-t > .testimonial-image {
+  position: absolute;
+  width: 17rem;
+  height: 18rem;
+  border: 2px solid orange;
+  background-color: transparent;
+  right: 9rem;
+  top: 0.9rem;
+}
+
+.right-t > .testimonial-background {
+  position: absolute;
+  width: 17rem;
+  height: 20rem;
+  right: 7rem;
+  top: 4rem;
+  background: var(--planCard);
+}
+
+.arrows {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 2rem;
+}
+
+.arrows > img {
+  width: 2rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .testimonials {
+    flex-direction: column;
+    height: auto; /* remove fixed height for mobile */
+  }
+
+  .left-t > :nth-child(2),
+  .left-t > :nth-child(3) {
+    font-size: xx-large;
+  }
+
+  .right-t {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .right-t > div {
+    position: relative;
+    display: block;
+  }
+
+  .right-t > img {
+    top: 0;
+    right: 0;
+    position: relative;
+    align-self: center;
+    width: 100%; /* set width to 100% to fill container */
+    height: auto; /* set height to auto to maintain aspect ratio */
+  }
+
+  .right-t > .testimonial-image {
+    display: none; /* hide the testimonial image on mobile */
+  }
+
+  .right-t > .testimonial-background {
+    display: none; /* hide the testimonial background on mobile */
+  }
+
+  .right-t > :last-child {
+    display: block;
+    bottom: 0;
+    left: 0;
+  }
+}
